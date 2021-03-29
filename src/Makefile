@@ -39,12 +39,14 @@ default: access_log_parser
 $(OBJDIR)/%.o: %.cpp
 	$(CC) $(CPPFLAGS) -c	$<	-o $@
 
-all:
-	mkdir -p $(OBJDIR)
-	mkdir -p $(BINDIR)
+all: makedirs
 	$(MAKE) $(BINDIR)/$(EXECUTABLE)
 
-access_log_parser:
+makedirs:
+	mkdir -p $(OBJDIR)
+	mkdir -p $(BINDIR)
+
+access_log_parser: makedirs
 	$(MAKE) $(BINDIR)/$(EXECUTABLE)
 
 $(BINDIR)/access_log_parser : $(OBJFILES)
