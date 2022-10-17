@@ -6,6 +6,7 @@
 #define MAFIASCUM_ACCESS_PARSER_ACCESS_LOG_PARSER_H
 
 #include <string>
+#include <optional>
 #include "access_date.h"
 
 class AccessLogParser {
