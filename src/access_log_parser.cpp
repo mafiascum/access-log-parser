@@ -98,7 +98,7 @@ void AccessLogParser::read_file() {
             std::string output_file_path = write_path + this->get_file_name(*line_date);
 
             std::cout << "Opened File: " + output_file_path << std::endl;
-            output_file = new std::ofstream(output_file_path.c_str());
+            output_file = new std::ofstream(output_file_path.c_str(), std::ios_base::app);
             date_to_output_file_map[*line_date] = output_file;
         }
         else {
